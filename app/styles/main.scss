@@ -13,6 +13,12 @@ $black: #111;
   border: solid 1px #111;
 }
 
+@mixin vertical-text {
+	transform: rotate(270deg);
+	transform-origin: left top 0;
+  float: left;
+}
+
 
 @import 'core';
 
@@ -70,12 +76,45 @@ section.main-wrapper {
   article {
     @include span-columns(9);
     @include standard-border;
+    p {
+      clear: left;
+    }
   }
   aside {
     @include span-columns(3);
     @include standard-border;
+    section.category-table {
+      @include span-columns(3 of 3);
+      header {
+        @include shift (2);
+        @include span-columns (1 of 3);
+        h3 {
+          @include vertical-text;
+          width: 33%;
+        }
+      }
+      span.category {
+        @include span-columns (2 of 3);
+      }
+      span.assignees {
+        @include span-columns (1 of 3);
+      }
+    }
   }
 }
+
+
+h2 {
+  font-size: 1.2em;
+  float: left;
+}
+h2+a {
+  float: right;
+}
+
+
+
+
 
 .browserupgrade {
   margin: 0.2em 0;
