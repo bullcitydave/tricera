@@ -1,5 +1,11 @@
 // bower:scss
+@import "bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+@import "bower_components/neat/app/assets/stylesheets/_neat.scss";
 // endbower
+
+@mixin standard-border {
+  border: solid 1px #111;
+}
 
 body {
   background: #fafafa;
@@ -7,19 +13,25 @@ body {
   color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+header.main {
+  @include outer-container;
+  @include standard-border;
+}
+
+section.main-wrapper {
+  @include outer-container;
+  nav.task-nav {
+    @include shift(0.5);
+    @include span-columns(11);
+    @include standard-border;
+  }
+  article {
+    @include span-columns(9);
+    @include standard-border;
+  }
+  aside {
+    @include span-columns(3);
+    @include standard-border;
   }
 }
 
