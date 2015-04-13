@@ -3,9 +3,20 @@
 @import "bower_components/neat/app/assets/stylesheets/_neat.scss";
 // endbower
 
+
+/* COLORS */
+$black: #111;
+
+
+
 @mixin standard-border {
   border: solid 1px #111;
 }
+
+
+@import 'core';
+
+
 
 body {
   background: #fafafa;
@@ -21,9 +32,40 @@ header.main {
 section.main-wrapper {
   @include outer-container;
   nav.task-nav {
-    @include shift(0.5);
-    @include span-columns(11);
+    @include span-columns(12);
     @include standard-border;
+    section.task-track {
+      @include span-columns(5 of 12);
+      span.label {
+        @include span-columns(0.75 of 5);
+      }
+      span.progress-bar{
+        @include span-columns(2.5 of 5);
+        height: 25px;
+        @include standard-border;
+        span.completed {
+          display: inherit;
+          background: blue;
+        }
+      }
+      span.progress-stats {
+        @include span-columns(1.5 of 5);
+      }
+    }
+    section.task-links {
+      @include span-columns(5 of 12);
+      ul > li {
+        list-style: none;
+        padding: 0 15px;
+        float: left;
+        a {
+          text-decoration: underline;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
   }
   article {
     @include span-columns(9);

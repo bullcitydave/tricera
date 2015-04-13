@@ -1,0 +1,726 @@
+/*----------------------*\
+  $CONTENTS
+  $FONTS
+  $GENERAL RULES
+  $HEADER
+  $MAIN
+\*-----------------------*/
+
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote {
+  &:before, &:after {
+    content: none;
+  }
+}
+
+q {
+  &:before, &:after {
+    content: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  &:focus, &:active {
+    border: 0;
+    outline: 0;
+  }
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+}
+
+input {
+  &[type="reset"]::-moz-focus-inner, &[type="button"]::-moz-focus-inner, &[type="submit"]::-moz-focus-inner {
+    border: 0;
+    outline: 0;
+  }
+}
+
+select::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+}
+
+/*------------------------*\
+  $FONTS
+\*------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+/*------------------------*\
+  $GENERAL RULES
+\*------------------------*/
+
+body {
+  min-width: 970px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 14px;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, span, div, a, li, label, input, textarea, button {
+  font-family: 'Varela Round', sans-serif;
+}
+
+input, textarea {
+  font-size: 14px;
+}
+
+a {
+  color: #2179b7;
+}
+
+small {
+  font-size: 12px;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.container {
+  width: 970px !important;
+  max-width: none !important;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/*------------------------*\
+  $HEADER
+\*------------------------*/
+
+#header {
+  background-color: #2179b7;
+  .logo-dragon {
+    display: inline-block;
+    background-color: #0068ac;
+    text-align: center;
+    padding: 15px 18px;
+    a {
+      display: block;
+    }
+  }
+  .head-text {
+    color: #fff;
+    display: inline-block;
+    vertical-align: bottom;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    .title {
+      font-size: 1.7em;
+    }
+    .subtitle {
+      text-transform: uppercase;
+      font-size: 0.8em;
+      padding-top: 5px;
+    }
+  }
+  .logo-icf {
+    display: inline-block;
+    float: right;
+    padding-top: 12px;
+    text-align: center;
+  }
+}
+
+#subheader {
+  background-color: #e6e6e6;
+  text-align: right;
+  .user-actions {
+    padding: 10px 0px;
+    a {
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 0.9em;
+      color: #404040;
+      margin: 0px 10px;
+      cursor: pointer;
+      &:hover {
+        color: #404040;
+      }
+    }
+  }
+}
+
+/*------------------------*\
+  $MAIN
+\*------------------------*/
+
+#main {
+  margin: 20px 0px;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+ // TO-DO way too much button CSS!!!!
+.btn {
+  display: inline-block;
+  border: 1px solid $black;
+  padding: 7px 14px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-default, .btn-next, .btn-finish, .btn-edit, .btn-save, .btn-create {
+  color: #fff;
+  border: none;
+  background-color: #2179b7;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 0.9em;
+  line-height: 1.1em;
+  margin: 0 15px;  // TO-DO this is a quick hack that may have broken positioning elsewhere
+  min-width: 65px;
+}
+
+.btn-cancel, .btn-back {
+  color: #fff;
+  border: none;
+  background-color: #c4c4c4;
+  text-transform: uppercase;
+}
+
+.btn-remove {
+  background-color: darkred;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.btn-default > span.iconic {
+  margin-right: 10px;
+  vertical-align: sub;
+}
+
+button.iconic:before {
+  padding: 2px 5px
+}
+
+.btn-next {
+  background: #2179b7 url('../images/chevron-right.png') no-repeat center right;
+  /*background-position: 0px 12px;*/
+  background-position: center right 12px;
+  /*background-position-x: 120%;*/
+  background-position-x: 85%;
+}
+
+.btn-back {
+  background: #2179b7 url('../images/chevron-left.png') no-repeat center left;
+  background-position: center left 12px;
+  background-position-x: 15%;
+}
+
+.btn-edit {
+  background: #2179b7 url('../images/pencil.png') no-repeat center leftt;
+  background-position: center left 12px;
+  background-position-x: 15%;
+}
+
+/* Table */
+
+.table-default {
+  border: 1px solid #a9a9a9;
+  margin: 0 auto 10px;
+  caption {
+    background-color: #2179b7;
+    color: #fff;
+    text-align: left;
+    padding: 15px;
+  }
+  thead {
+    background-color: #2179b7;
+    color: #fff;
+    text-transform: uppercase;
+    th {
+      padding: 15px;
+      font-size: 1em;
+      text-align: left;
+      &.w15 {
+        width: 15%;
+      }
+      &.w25 {
+        width: 25%;
+      }
+      &.w50 {
+        width: 50%;
+      }
+    }
+    tr th {
+      border-left: 1px solid #cccccc;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background: #ffffff;
+      }
+      &:nth-child(odd) {
+        background: #eaeaea;
+      }
+      td {
+        padding: 12px;
+        border-left: 1px solid #cccccc;
+      }
+    }
+  }
+}
+
+ul.ext-fields {
+  &:nth-child(odd) > li > span > table > tbody > tr {
+    background-color: #eaeaea;
+  }
+  &:nth-child(even) > li > span > table > tbody > tr {
+    background-color: #ffffff;
+  }
+  &:nth-child(odd) ul.ext-items .table-default > tbody > tr {
+    &:nth-child(odd) {
+      background-color: #ffffff;
+    }
+    &:nth-child(even) {
+      background-color: #eaeaea;
+    }
+  }
+  &:nth-child(even) ul.ext-items .table-default > tbody > tr {
+    &:nth-child(even) {
+      background-color: #ffffff;
+    }
+    &:nth-child(odd) {
+      background-color: #eaeaea;
+    }
+  }
+}
+
+li.ext-field table.table-default.table-setup {
+  margin-bottom: 5px;
+}
+
+
+.td-action {
+  vertical-align: middle;
+  a {
+    color: #2179b7;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .action-view, .action-manage, .action-edit {
+    margin-right: 15px;
+  }
+}
+
+.td-complete span {
+  &:first-child {
+    margin-left: 5px;
+  }
+  &:last-child {
+    font-size: 0.9em;
+    float: right;
+  }
+}
+
+.td-status {
+  text-align: center;
+  font-size: 0;
+  vertical-align: middle;
+  span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  &.status-group {
+    font-size: inherit;
+    span {
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+  span {
+    &.status-label {
+      margin-left: 25px;
+      padding-top: 4px;
+    }
+    &.red {
+      background-color: #c53e35;
+    }
+    &.orange {
+      background-color: #e08e00;
+    }
+    &.green {
+      background-color: #5ebd1f;
+    }
+  }
+}
+
+.td-role {
+  text-transform: uppercase;
+}
+
+.td-step {
+  width: 25%;
+  a {
+    color: $black;
+    transition: 0.3s;
+  }
+  &:hover {
+    cursor: pointer;
+    a {
+      color: #0068ac;
+    }
+  }
+}
+
+.td-number-tasks {
+  width: 10%;
+  text-align: right;
+}
+
+.td-horiz-graph {
+  width: 55%;
+}
+
+/**
+ * Custom Checkbox
+ */
+
+label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input {
+  &[type=checkbox].css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    + label.css-label {
+      padding: 0 28px;
+      height: 20px;
+      display: inline-block;
+      line-height: 20px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      /*font-size:15px;*/
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    &:checked + label.css-label {
+      background-position: 0 -22px;
+    }
+  }
+  &[type=file] {
+    border: none;
+    background-color: #eaeaea;
+    text-transform: uppercase;
+    height: 100px;
+    padding: 5%;
+    font-size: 1.0em;
+    width: 100%;
+  }
+}
+
+.css-label {
+  background-image: url('../images/dark-check-green.png');
+}
+
+/*specific classes related to Checkbox skins*/
+
+.lite-green-check {
+  background-image: url('../images/lite-blue-check.png');
+}
+
+input[type=checkbox] {
+  &.css-checkbox {
+    &.med {
+      + label.css-label.med {
+        padding-left: 22px;
+        height: 17px;
+        display: inline-block;
+        line-height: 17px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        /*font-size:15px;*/
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      &:checked + label.css-label.med {
+        background-position: 0 -17px;
+      }
+    }
+    &.sme {
+      + label.css-label.sme {
+        padding-left: 22px;
+        height: 16px;
+        display: inline-block;
+        line-height: 16px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        /*font-size:15px;*/
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      &:checked + label.css-label.sme {
+        background-position: 0 -16px;
+      }
+    }
+    &.lrg {
+      + label.css-label.lrg {
+        padding-left: 22px;
+        height: 20px;
+        display: inline-block;
+        line-height: 20px;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        /*font-size:15px;*/
+        vertical-align: middle;
+        cursor: pointer;
+      }
+      &:checked + label.css-label.lrg {
+        background-position: 0 -20px;
+      }
+    }
+  }
+  &.css-checkbox-setup {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    + label.css-label-setup {
+      padding-left: 27px;
+      height: 22px;
+      display: inline-block;
+      line-height: 22px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      /*font-size:22px;*/
+      vertical-align: middle;
+      cursor: pointer;
+    }
+    &:checked + label.css-label-setup {
+      background-position: 0 -22px;
+    }
+  }
+}
+
+.css-label-setup {
+  background-image: url('../images/lite-blue-check.png');
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+ * Custom Radio Button
+ */
+
+input[type=radio].css-radio {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  + label.css-label {
+    padding-left: 25px;
+    height: 20px;
+    display: inline-block;
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    /*font-size:20px;*/
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  &:checked + label.css-label {
+    background-position: 0 -22px;
+  }
+}
+
+label.css-label {
+  background-image: url('../images/lite-blue-check.png');
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a.fulltext {
+  position: relative;
+  background: #ccc;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  outline: none;
+  padding: 0 2px;
+}
+
+.fulltext {
+  span.full {
+    visibility: hidden;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    z-index: 999;
+    width: 230px;
+    margin-left: -127px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    opacity: 0;
+    background-color: #ddd;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: visibility 0.3s linear, opacity 0.3s ease-in-out;
+  }
+  &:hover {
+    border: 0;
+    /* IE6 fix */
+    span {
+      visibility: visible;
+      opacity: 0.9;
+    }
+  }
+  span {
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      z-index: 1000;
+      bottom: -7px;
+      left: 50%;
+      margin-left: -8px;
+      border-top: 8px solid #ddd;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 0;
+    }
+    &:before {
+      border-top-color: #ccc;
+      bottom: -8px;
+    }
+  }
+}
+
+/* Button Types */
+
+/* Actions without icons, by themselves, i.e. Invite User */
+
+button.solo {
+  text-transform: uppercase;
+  border: none;
+  background: #2179b7;
+  color: white;
+  padding: 4px 8px 4px 8px;
+  margin-left: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visualization */
+
+.visualization-box {
+  vertical-align: middle;
+  text-align: center;
+  background-color: #eaeaea;
+  padding: 15px 20px;
+  margin: 0px 15px 20px 15px;
+  height: 180px;
+}
+
+/* Dashboard */
+
+.table-dashboard .title a+span {
+  color: $black;
+}
+
+/* Miscellaneous */
+
+p.no-results {
+  text-align: center;
+  margin: 10px 0;
+}
