@@ -13,9 +13,13 @@ $black: #111;
   border: solid 1px #111;
 }
 
+@mixin thick-border {
+  border: solid 3px #111;
+}
+
 @mixin vertical-text {
 	transform: rotate(270deg);
-	transform-origin: left top 0;
+	transform-origin: bottom right;
   float: left;
 }
 
@@ -74,30 +78,55 @@ section.main-wrapper {
     }
   }
   article {
-    @include span-columns(9);
+    @include span-columns(8);
     @include standard-border;
     p {
       clear: left;
     }
   }
   aside {
-    @include span-columns(3);
+    @include span-columns(4);
     @include standard-border;
     section.category-table {
-      @include span-columns(3 of 3);
+      @include span-columns(4 of 4);
       header {
-        @include shift (2);
-        @include span-columns (1 of 3);
+        @include shift (2.7);
+        @include span-columns (1.3 of 4);
+        @include omega;
+        min-height: 50px;
         h3 {
           @include vertical-text;
           width: 33%;
         }
       }
-      span.category {
-        @include span-columns (2 of 3);
+      div.category-row {
+        @include span-columns(4 of 4);
+        span.category {
+          @include span-columns (2.7 of 4);
+          &.child {
+            @include shift (0.7);
+            @include span-columns (2 of 4);
+          }
+        }
+        span.assignees {
+          @include span-columns (1.3 of 4);
+          @incude omega;
+          span.checkoff {
+            width: 33%;
+            height: 20px;
+            @include thick-border;
+            float: left;
+            &.me {
+              @include standard-border;
+            }
+          }
+        }
       }
-      span.assignees {
-        @include span-columns (1 of 3);
+      div.explanation {
+        @include shift (0.25);
+        @include span-columns (3.5 of 4);
+        @include standard-border;
+        min-height: 70px;
       }
     }
   }
