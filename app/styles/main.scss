@@ -56,7 +56,9 @@ $red: red;
 
 @mixin checked-off {
   background: url(../images/check.svg);
-  background-size: cover;
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -152,6 +154,9 @@ section.main-wrapper {
       div.category-row {
         @include span-columns(4 of 4);
         @include omega;
+        &:last-of-type {
+          margin-bottom: 15px;
+        }
         span.category {
           @include span-columns (2.7 of 4);
           &.child {
@@ -182,9 +187,8 @@ section.main-wrapper {
           }
         }
       }
-      div.explanation {
-        @include shift (0.25);
-        @include span-columns (3.5 of 4);
+      textarea.explanation {
+        @include span-columns (4 of 4);
         @include standard-border;
         min-height: 70px;
       }
