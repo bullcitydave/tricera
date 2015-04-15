@@ -6,7 +6,24 @@
 
 /* COLORS */
 $black: #111;
+$med-gray: #c1c1c1;
+$green: green;
+$red: red;
 
+
+@mixin category-checkbox {
+    @include size(15px 15px);
+    margin: 0 4px 4px 4px;
+    float: left;
+}
+
+@mixin assignee-1 {
+  background: $green;
+}
+
+@mixin assignee-2 {
+  background: $red;
+}
 
 
 @mixin standard-border {
@@ -23,16 +40,30 @@ $black: #111;
   float: left;
 }
 
+@mixin dragon-hyperlink {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+@mixin small-bold {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+@mixin checked-off {
+  background: url(../images/check.svg);
+  background-size: cover;
+}
+
 
 @import 'core';
 
 
 
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
 
 header.main {
   @include outer-container;
@@ -41,25 +72,35 @@ header.main {
 
 section.main-wrapper {
   @include outer-container;
+  max-width: 970px;
+  a {
+    @include dragon-hyperlink;
+  }
   nav.task-nav {
     @include span-columns(12);
-    @include standard-border;
+    @include thick-border;
+    padding: 10px;
+    margin-bottom: 15px;
     section.task-track {
       @include span-columns(5 of 12);
       span.label {
-        @include span-columns(0.75 of 5);
+        @include span-columns(0.5 of 5);
+        @include small-bold;
       }
       span.progress-bar{
-        @include span-columns(2.5 of 5);
-        height: 25px;
-        @include standard-border;
+        @include span-columns(2.75 of 5);
+        height: 15px;
+        @include thick-border;
         span.completed {
           display: inherit;
-          background: blue;
+          background: $med-gray;
+          height: 100%;
         }
       }
       span.progress-stats {
-        @include span-columns(1.5 of 5);
+        @include span-columns(1.75 of 5);
+        @include omega;
+        @include small-bold;
       }
     }
     section.task-links {
@@ -68,25 +109,34 @@ section.main-wrapper {
         list-style: none;
         padding: 0 15px;
         float: left;
-        a {
-          text-decoration: underline;
-          &:hover {
-            color: white;
-          }
-        }
       }
     }
   }
   article {
     @include span-columns(8);
-    @include standard-border;
+    h1 {
+      font-size: 1.0em;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      padding: 10px 10px 10px 0;
+      line-height: 1.2em;
+    }
+    h2 {
+      @include small-bold;
+    }
     p {
       clear: left;
+      line-height: 1.1em;
+      padding: 0 0 15px 0;
+    }
+    .citation p {
+        padding: 0;
     }
   }
   aside {
     @include span-columns(4);
-    @include standard-border;
+    @include thick-border;
+    @include pad;
     section.category-table {
       @include span-columns(4 of 4);
       header {
@@ -101,6 +151,7 @@ section.main-wrapper {
       }
       div.category-row {
         @include span-columns(4 of 4);
+        @include omega;
         span.category {
           @include span-columns (2.7 of 4);
           &.child {
@@ -111,13 +162,22 @@ section.main-wrapper {
         span.assignees {
           @include span-columns (1.3 of 4);
           @incude omega;
+          input[type=checkbox] {
+            -webkit-appearance: inherit;
+            @include category-checkbox;
+            @include standard-border;
+            &:checked {
+              @include checked-off;
+            }
+          }
           span.checkoff {
-            width: 33%;
-            height: 20px;
+            @include category-checkbox;
             @include thick-border;
-            float: left;
-            &.me {
-              @include standard-border;
+            &.assignee-1 {
+              @include assignee-1;
+            }
+            &.assignee-2 {
+              @include assignee-2;
             }
           }
         }
