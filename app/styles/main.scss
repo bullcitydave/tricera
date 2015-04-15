@@ -61,6 +61,16 @@ $red: red;
   background-repeat: no-repeat;
 }
 
+@mixin nav-button($direction) {
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: $direction;
+  width: 40%;
+  border: none;
+  font-weight: bold;
+}
+
+
 
 @import 'core';
 
@@ -91,6 +101,7 @@ section.main-wrapper {
       }
       span.progress-bar{
         @include span-columns(2.75 of 5);
+        @include omega;
         height: 15px;
         @include thick-border;
         span.completed {
@@ -101,8 +112,8 @@ section.main-wrapper {
       }
       span.progress-stats {
         @include span-columns(1.75 of 5);
-        @include omega;
         @include small-bold;
+        padding-left: 5px;
       }
     }
     section.task-links {
@@ -111,6 +122,21 @@ section.main-wrapper {
         list-style: none;
         padding: 0 15px;
         float: left;
+      }
+    }
+    section.task-nav-buttons {
+      @include span-columns(2 of 12);
+      @include omega;
+      button {
+        cursor: pointer;
+        &.prev {
+          background: url(../images/chevron-left.svg);
+          @include nav-button(0%);
+        }
+        &.next {
+          background: url(../images/chevron-right.svg);
+          @include nav-button(100%);
+        }
       }
     }
   }
