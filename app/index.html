@@ -58,7 +58,8 @@
           <span class="label">Tasks
           </span>
           <span class="progress-bar">
-            <span class="completed" style="width: 30%">
+            <!-- calculate width based on stats -->
+            <span class="completed" style="width: 80%">
             </span>
           </span>
           <span class="progress-stats">12569 / 15000
@@ -66,9 +67,9 @@
         </section>
         <section class="task-links">
           <ul>
-            <li><a>Task Listing</a></li>
-            <li><a>Instructions</a></li>
-            <li><a>Settings</a></li>
+            <li><a data-subpage="tasklist">Task Listing</a></li>
+            <li><a data-subpage="instructions">Instructions</a></li>
+            <li><a data-subpage="settings">Settings</a></li>
           </ul>
         </section>
         <section class="task-nav-buttons">
@@ -76,128 +77,151 @@
           <button class="next">Next</button>
         </section>
       </nav>
-      <article>
-        <h1>Rational Design and Synthesis of a Novel Anti-leukemic Agent Targeting Bruton′s Tyrosine Kinase (BTK), LFM-A13 [α-Cyano-β-Hydroxy-β-Methyl-N-(2,5-Dibromophenyl)Propenamide]</h1>
-        <section class="abstract">
-          <h2>Abstract</h2>
-          <a data-modal="highlights">see highlights</a>
-          <p>In a systematic effort to design potent inhibitors of the anti-apoptotic tyrosine kinase BTK (Bruton′s tyrosine kinase) as anti-leukemic agents with apoptosis-promoting and chemosensitizing properties, we have constructed a three-dimensional homology model of the BTK kinase domain. Our modeling studies revealed a distinct rectangular binding pocket near the hinge region of the BTK kinase domain with Leu460, Tyr476, Arg525, and Asp539 residues occupying the corners of the rectangle. The dimensions of this rectangle are approximately 18 × 8 × 9 × 17 Å, and the thickness of the pocket is approximately 7 Å. Advanced docking procedures were employed for the rational design of leflunomide metabolite (LFM) analogs with a high likelihood to bind favorably to the catalytic site within the kinase domain of BTK. The lead compound LFM-A13, for which we calculated a K i value of 1.4 μM, inhibited human BTK in vitro with an IC50 value of 17.2 ± 0.8 μM. Similarly, LFM-A13 inhibited recombinant BTK expressed in a baculovirus expression vector system with an IC50 value of 2.5 μM. The energetically favorable position of LFM-A13 in the binding pocket is such that its aromatic ring is close to Tyr476, and its substituent group is sandwiched between residues Arg525 and Asp539. In addition, LFM-A13 is capable of favorable hydrogen bonding interactions with BTK via Asp539 and Arg525 residues. Besides its remarkable potency in BTK kinase assays, LFM-A13 was also discovered to be a highly specific inhibitor of BTK. Even at concentrations as high as 100 μg/ml (∼278 μM), this novel inhibitor did not affect the enzymatic activity of other protein tyrosine kinases, including JAK1, JAK3, HCK, epidermal growth factor receptor kinase, and insulin receptor kinase. In accordance with the anti-apoptotic function of BTK, treatment of BTK+ B-lineage leukemic cells with LFM-A13 enhanced their sensitivity to ceramide- or vincristine-induced apoptosis. To our knowledge, LFM-A13 is the first BTK-specific tyrosine kinase inhibitor and the first anti-leukemic agent targeting BTK.</p>
-        </section>
-        <section class="citation">
-          <h2>Full Citation</h2>
-          <p id="title">Rational design and synthesis of a novel anti-leukemic agent targeting Bruton′ s tyrosine kinase (BTK), LFM-A13 [α-Cyano-β-Hydroxy-β-Methyl-N-(2, 5-Dibromophenyl) Propenamide].</p>
-          <p id="authors">Mahajan, S., Ghosh, S., Sudbeck, E. A., Zheng, Y., Downs, S., Hupke, M., Uckun, F. M.</p>
-          <p id="journal">Journal of Biological Chemistry, 274(14), 9587-9599.</p>
-        </section>
-      </article>
-      <aside>
-        <h2>Categories</h2>
-        <a data-modal="category-descriptions">see all descriptions</a>
-        <section class="category-table">
-          <header>
-            <h3 class="assignee me">Me</h3>
-          </header>
-          <div class="category-row selected">
-            <label for="epi" class="category">EPI</label>
-            <span class="assignees">
-                                          <!-- <span class="checkoff me"></span> -->
-              <input type="checkbox" checked="checked" id="epi" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <label for="2" class="category child">Case Control</label>
-            <span class="assignees">
-              <input type="checkbox" id="2" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row selected">
-            <label for="3"class="category child">Cohort</label>
-            <span class="assignees">
-                                          <input type="checkbox" checked="checked" id="3" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <label for="4" class="category child">Ecological</label>
-            <span class="assignees">
-                                          <input type="checkbox" id="4" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <label for="5" class="category">Animal</label>
-            <span class="assignees">
-                                          <input type="checkbox" id="5" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <label for="6" class="category">In Vitro</label>
-            <span class="assignees">
-                                          <input type="checkbox" id="6" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <label for="7"class="category">Exposure</label>
-            <span class="assignees">
-                                          <input type="checkbox" id="7" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category">Mode of Action</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="8" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">Oxiditive Stress</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="9" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">Regen. Prolif.</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="10" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">DNA Damage</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="11" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category">Health Effect</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="12" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">Cardio</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="13" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">Neuro</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">Respiratory</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="14" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category child">Endocrine</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="15" name="epi"/>
-            </span>
-          </div>
-          <h2>Explanation</h2>
-          <textarea rows="4" class="explanation"></textarea>
-        </section>
-      </aside>
+
+      <section class="subpage" id="tasklist">
+        <h2>Task Listing</h2>
+        <p>Coming soon</p>
+        <p><a id="task">Jump to task</a></p>
+      </section>
+
+      <section class="subpage" id="settings">
+        <h2>Settings</h2>
+        <p>Coming soon</p>
+      </section>
+
+      <section class="subpage" id="instructions">
+        <h2>Instructions</h2>
+        <p>Here are the instructions for this step</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatu</p>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</p>
+      </section>
+
+      <section class="article">
+        <article>
+          <h1>Rational Design and Synthesis of a Novel Anti-leukemic Agent Targeting Bruton′s Tyrosine Kinase (BTK), LFM-A13 [α-Cyano-β-Hydroxy-β-Methyl-N-(2,5-Dibromophenyl)Propenamide]</h1>
+          <section class="abstract">
+            <h2>Abstract</h2>
+            <a data-modal="highlights">see highlights</a>
+            <p>In a systematic effort to design potent inhibitors of the anti-apoptotic tyrosine kinase BTK (Bruton′s tyrosine kinase) as anti-leukemic agents with apoptosis-promoting and chemosensitizing properties, we have constructed a three-dimensional homology model of the BTK kinase domain. Our modeling studies revealed a distinct rectangular binding pocket near the hinge region of the BTK kinase domain with Leu460, Tyr476, Arg525, and Asp539 residues occupying the corners of the rectangle. The dimensions of this rectangle are approximately 18 × 8 × 9 × 17 Å, and the thickness of the pocket is approximately 7 Å. Advanced docking procedures were employed for the rational design of leflunomide metabolite (LFM) analogs with a high likelihood to bind favorably to the catalytic site within the kinase domain of BTK. The lead compound LFM-A13, for which we calculated a K i value of 1.4 μM, inhibited human BTK in vitro with an IC50 value of 17.2 ± 0.8 μM. Similarly, LFM-A13 inhibited recombinant BTK expressed in a baculovirus expression vector system with an IC50 value of 2.5 μM. The energetically favorable position of LFM-A13 in the binding pocket is such that its aromatic ring is close to Tyr476, and its substituent group is sandwiched between residues Arg525 and Asp539. In addition, LFM-A13 is capable of favorable hydrogen bonding interactions with BTK via Asp539 and Arg525 residues. Besides its remarkable potency in BTK kinase assays, LFM-A13 was also discovered to be a highly specific inhibitor of BTK. Even at concentrations as high as 100 μg/ml (∼278 μM), this novel inhibitor did not affect the enzymatic activity of other protein tyrosine kinases, including JAK1, JAK3, HCK, epidermal growth factor receptor kinase, and insulin receptor kinase. In accordance with the anti-apoptotic function of BTK, treatment of BTK+ B-lineage leukemic cells with LFM-A13 enhanced their sensitivity to ceramide- or vincristine-induced apoptosis. To our knowledge, LFM-A13 is the first BTK-specific tyrosine kinase inhibitor and the first anti-leukemic agent targeting BTK.</p>
+          </section>
+          <section class="citation">
+            <h2>Full Citation</h2>
+            <p id="title">Rational design and synthesis of a novel anti-leukemic agent targeting Bruton′ s tyrosine kinase (BTK), LFM-A13 [α-Cyano-β-Hydroxy-β-Methyl-N-(2, 5-Dibromophenyl) Propenamide].</p>
+            <p id="authors">Mahajan, S., Ghosh, S., Sudbeck, E. A., Zheng, Y., Downs, S., Hupke, M., Uckun, F. M.</p>
+            <p id="journal">Journal of Biological Chemistry, 274(14), 9587-9599.</p>
+          </section>
+        </article>
+
+        <aside>
+          <h2>Categories</h2>
+          <a data-modal="category-descriptions">see all descriptions</a>
+          <section class="category-table">
+            <header>
+              <h3 class="assignee me">Me</h3>
+            </header>
+            <div class="category-row selected">
+              <label for="epi" class="category">EPI</label>
+              <span class="assignees">
+                                            <!-- <span class="checkoff me"></span> -->
+                <input type="checkbox" checked="checked" id="epi" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <label for="2" class="category child">Case Control</label>
+              <span class="assignees">
+                <input type="checkbox" id="2" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row selected">
+              <label for="3"class="category child">Cohort</label>
+              <span class="assignees">
+                                            <input type="checkbox" checked="checked" id="3" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <label for="4" class="category child">Ecological</label>
+              <span class="assignees">
+                                            <input type="checkbox" id="4" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <label for="5" class="category">Animal</label>
+              <span class="assignees">
+                                            <input type="checkbox" id="5" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <label for="6" class="category">In Vitro</label>
+              <span class="assignees">
+                                            <input type="checkbox" id="6" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <label for="7"class="category">Exposure</label>
+              <span class="assignees">
+                                            <input type="checkbox" id="7" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category">Mode of Action</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="8" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">Oxiditive Stress</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="9" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">Regen. Prolif.</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="10" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">DNA Damage</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="11" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category">Health Effect</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="12" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">Cardio</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="13" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">Neuro</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="epi" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">Respiratory</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="14" name="epi"/>
+              </span>
+            </div>
+            <div class="category-row">
+              <span class="category child">Endocrine</span>
+              <span class="assignees">
+                                            <input type="checkbox" id="15" name="epi"/>
+              </span>
+            </div>
+            <h2>Explanation</h2>
+            <textarea rows="4" class="explanation"></textarea>
+          </section>
+        </aside>
+      </section>
     </section>
 
     <section class="modal" id="highlights">
@@ -301,6 +325,21 @@
           $('section[id=' + modal + ']').addClass('active');
         }, 1);
       })
+
+      $('a[data-subpage]').on('click', function (e) {
+        var subpage = $(e.target).attr('data-subpage');
+        $('.task-nav').addClass('subpage');
+        $('section.active').hide().removeClass('active');
+        $('section.article').hide();
+        $('section[id=' + subpage + ']').show().addClass('active');
+      })
+
+      $('a[id=task]').on('click', function (e) {
+        $('section.active').hide().removeClass('active');
+        $('.task-nav').removeClass('subpage');
+        $('section.article').show();
+      })
+
 
       $('a[class=close]').on('click', function (e) {
         $(e.target).closest('.modal').removeClass('active');

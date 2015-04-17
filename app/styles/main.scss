@@ -108,6 +108,9 @@ section.main-wrapper {
   nav.task-nav {
     @include span-columns(12);
     @include thick-border;
+    &.subpage {
+      border-bottom: none;
+    }
     padding: 10px;
     margin-bottom: 15px;
     section.task-track {
@@ -157,6 +160,25 @@ section.main-wrapper {
       }
     }
   }
+
+  section.subpage {
+    display: none;
+    height: calc(100% - 150px);
+    padding: 15px 15px 15px 15px;
+    @include thick-border;
+    border-top: none;
+    h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      float: left;
+      margin-bottom: 15px;
+    }
+    p {
+      clear: left;
+      padding-bottom: 10px;
+    }
+  }
+
   article {
     @include span-columns(8);
     h1 {
