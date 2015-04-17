@@ -9,11 +9,13 @@ $black: #111;
 $med-gray: #c1c1c1;
 $green: green;
 $red: red;
+$base-color: #2179b7;
+$lightblue: tint( $base-color, 50% );
 
 
 @mixin category-checkbox {
     @include size(15px 15px);
-    margin: 0 calc(100% - 15px)  4px calc(100% - 15px);
+    margin: 0.2em calc(100% - 15px) 0.2em calc(100% - 15px);
     float: left;
 }
 
@@ -55,10 +57,14 @@ $red: red;
 }
 
 @mixin checked-off {
-  background: url(../images/check.svg);
+  background: url(../../app/images/check.svg);
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@mixin checked-category-row {
+  background-color: $lightblue;
 }
 
 @mixin nav-button($direction) {
@@ -69,6 +75,17 @@ $red: red;
   border: none;
   font-weight: bold;
 }
+
+
+  @mixin centerer( $height, $width ) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: $height;
+    width: $width;
+  }
+
 
 
 
@@ -130,11 +147,11 @@ section.main-wrapper {
       button {
         cursor: pointer;
         &.prev {
-          background: url(../images/chevron-left.svg);
+          background: url(../../app/images/chevron-left.svg);
           @include nav-button(0%);
         }
         &.next {
-          background: url(../images/chevron-right.svg);
+          background: url(../../app/images/chevron-right.svg);
           @include nav-button(100%);
         }
       }
@@ -189,12 +206,19 @@ section.main-wrapper {
       div.category-row {
         @include span-columns(4 of 4);
         @include omega;
+        padding: 0 0.3em;
         &:last-of-type {
           margin-bottom: 15px;
         }
-        span.category {
+        &.selected {
+          @include checked-category-row;
+        }
+        span.category, label.category {
           @include span-columns (2.7 of 4);
+
           font-size: 0.9em;
+          cursor: pointer;
+          padding-top: 0.3em;
           &.child {
             @include shift (0.7);
             @include span-columns (2 of 4);
@@ -213,11 +237,11 @@ section.main-wrapper {
           }
           .qa & {
             input[type=checkbox] {
-              margin: 0 0 4px 4px;
+              margin: 0.2em 0 0.2em 4px;
             }
             span.checkoff {
               @include category-checkbox;
-              margin: 0 4px 4px 4px;
+              margin: 0.2em 4px 0.2em 4px;
               @include thick-border;
               &.assignee-1 {
                 @include assignee-1;
@@ -246,6 +270,52 @@ h2 {
 }
 h2+a {
   float: right;
+}
+
+
+/* MODALS */
+
+.modal {
+  display: none;
+  @include thick-border;
+  padding: 15px;
+  background: white;
+  header {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    padding: 0 25px 0 0;
+    h2 {
+      font-size: 1.6em;
+      font-weight: bold;
+      float: left;
+    }
+    a {
+      @include dragon-hyperlink;
+    }
+  }
+  .content {
+    position: relative;
+    top: 40px;
+    height: calc(100% - 40px);
+    overflow: scroll;
+  }
+}
+
+#category-descriptions {
+  @include centerer ( 500px, 700px );
+  .category {
+    clear: left;
+    padding: 8px 0;
+    .title {
+    }
+    .description {
+      padding-left: 20px;
+    }
+    .category {
+      padding-left: 20px;
+    }
+  }
 }
 
 

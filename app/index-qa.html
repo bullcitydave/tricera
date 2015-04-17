@@ -13,7 +13,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../.tmp/styles/main.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -31,14 +31,14 @@
         <div class="container">
           <!-- Logo Dragon -->
           <div class="logo-dragon">
-            <a href="/dashboard"><img src="/images/logo_dragon.png"/></a>
+            <a href="/dashboard"><img src="images/logo_dragon.png"/></a>
           </div>
           <!-- Header text -->
           <div class="head-text">
             <div class="title" th:text="${title}">&nbsp;</div>
           </div>
           <!-- Logo ICF -->
-          <div class="logo-icf"><img src="/images/logo_icf.png"/></div>
+          <div class="logo-icf"><img src="images/logo_icf.png"/></div>
         </div><!-- //.container -->
       </div><!-- //#header -->
       <!-- Subheader -->
@@ -100,7 +100,7 @@
             <h3 class="assignee">Larry</h3>
             <h3 class="assignee me">Me</h3>
           </header>
-          <div class="category-row">
+          <div class="category-row selected">
             <span class="category">EPI</span>
             <span class="assignees">
               <span class="checkoff assignee-1"></span>
@@ -117,8 +117,8 @@
               <input type="checkbox" id="epi" name="epi"/>
             </span>
           </div>
-          <div class="category-row">
-            <span class="category child">Cohort</span>
+          <div class="category-row selected">
+            <label for="epi" class="category child">Cohort</label>
             <span class="assignees">
               <span class="checkoff assignee-1"></span>
               <span class="checkoff assignee-2"></span>
@@ -247,12 +247,17 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+    <script>
+      $(document).on('click','input[type=checkbox]', function(e) {
+       $(e.target).closest('.category-row').toggleClass('selected');
+      })
+    </script>
 </body>
 </html>

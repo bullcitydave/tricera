@@ -13,7 +13,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="../.tmp/styles/main.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -31,14 +31,14 @@
         <div class="container">
           <!-- Logo Dragon -->
           <div class="logo-dragon">
-            <a href="/dashboard"><img src="/images/logo_dragon.png"/></a>
+            <a href="/dashboard"><img src="images/logo_dragon.png"/></a>
           </div>
           <!-- Header text -->
           <div class="head-text">
             <div class="title" th:text="${title}">&nbsp;</div>
           </div>
           <!-- Logo ICF -->
-          <div class="logo-icf"><img src="/images/logo_icf.png"/></div>
+          <div class="logo-icf"><img src="images/logo_icf.png"/></div>
         </div><!-- //.container -->
       </div><!-- //#header -->
       <!-- Subheader -->
@@ -92,88 +92,88 @@
       </article>
       <aside>
         <h2>Categories</h2>
-        <a id="categories">see all descriptions</a>
+        <a data-modal="category-descriptions">see all descriptions</a>
         <section class="category-table">
           <header>
             <h3 class="assignee me">Me</h3>
           </header>
-          <div class="category-row">
-            <span class="category">EPI</span>
+          <div class="category-row selected">
+            <label for="epi" class="category">EPI</label>
             <span class="assignees">
                                           <!-- <span class="checkoff me"></span> -->
               <input type="checkbox" checked="checked" id="epi" name="epi"/>
             </span>
           </div>
           <div class="category-row">
-            <span class="category child">Case Control</span>
+            <label for="2" class="category child">Case Control</label>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+              <input type="checkbox" id="2" name="epi"/>
+            </span>
+          </div>
+          <div class="category-row selected">
+            <label for="3"class="category child">Cohort</label>
+            <span class="assignees">
+                                          <input type="checkbox" checked="checked" id="3" name="epi"/>
             </span>
           </div>
           <div class="category-row">
-            <span class="category child">Cohort</span>
+            <label for="4" class="category child">Ecological</label>
             <span class="assignees">
-                                          <input type="checkbox" checked="checked" id="epi" name="epi"/>
+                                          <input type="checkbox" id="4" name="epi"/>
             </span>
           </div>
           <div class="category-row">
-            <span class="category child">Ecological</span>
+            <label for="5" class="category">Animal</label>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="5" name="epi"/>
             </span>
           </div>
           <div class="category-row">
-            <span class="category">Animal</span>
+            <label for="6" class="category">In Vitro</label>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="6" name="epi"/>
             </span>
           </div>
           <div class="category-row">
-            <span class="category">In Vitro</span>
+            <label for="7"class="category">Exposure</label>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
-            </span>
-          </div>
-          <div class="category-row">
-            <span class="category">Exposure</span>
-            <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="7" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category">Mode of Action</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="8" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category child">Oxiditive Stress</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="9" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category child">Regen. Prolif.</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="10" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category child">DNA Damage</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="11" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category">Health Effect</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="12" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category child">Cardio</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="13" name="epi"/>
             </span>
           </div>
           <div class="category-row">
@@ -185,19 +185,69 @@
           <div class="category-row">
             <span class="category child">Respiratory</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="14" name="epi"/>
             </span>
           </div>
           <div class="category-row">
             <span class="category child">Endocrine</span>
             <span class="assignees">
-                                          <input type="checkbox" id="epi" name="epi"/>
+                                          <input type="checkbox" id="15" name="epi"/>
             </span>
           </div>
           <h2>Explanation</h2>
           <textarea rows="4" class="explanation"></textarea>
         </section>
       </aside>
+    </section>
+
+
+    <section class="modal" id="category-descriptions">
+      <header>
+        <h2>Category Descriptions</h2>
+        <a class="close">close</a>
+      </header>
+      <section class= "content">
+        <div class="category">
+          <p class="title">Epi</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="category">
+            <p class="title">Case Control</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="category">
+            <p class="title">Cohort</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="category">
+            <p class="title">Ecology</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="category">
+          <p class="title">Animal</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="category">
+          <p class="title">In Vitro</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="category">
+          <p class="title">Mode of Action</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="category">
+            <p class="title">Oxiditive Stress</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="category">
+            <p class="title">Regen. Prolif.</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="category">
+            <p class="title">DNA Damage</p>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </section>
     </section>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -212,12 +262,26 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+    <script>
+      $(document).on('click','input[type=checkbox]', function(e) {
+       $(e.target).closest('.category-row').toggleClass('selected');
+      })
+
+      $('a[data-modal]').on('click', function (e) {
+        var modal = $(e.target).attr('data-modal');
+        $('section[id=' + modal + ']').show();
+      })
+
+      $('a[class=close]').on('click', function (e) {
+        $(e.target).closest('.modal').hide();
+      })
+    </script>
 </body>
 </html>
