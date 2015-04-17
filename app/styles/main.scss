@@ -77,14 +77,14 @@ $lightblue: tint( $base-color, 50% );
 }
 
 
-  @mixin centerer( $height, $width ) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: $height;
-    width: $width;
-  }
+@mixin centerer( $height, $width ) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: $height;
+  width: $width;
+}
 
 
 
@@ -277,9 +277,14 @@ h2+a {
 
 .modal {
   display: none;
+  opacity: 0;
   @include thick-border;
-  padding: 15px;
+  padding: 15px 3px 15px 15px; // add padding-right 12px to content to account for scrolling
   background: white;
+  transition: opacity 0.2s linear;
+  &.active {
+    opacity: 1;
+  }
   header {
     position: fixed;
     width: 100%;
@@ -298,25 +303,45 @@ h2+a {
     position: relative;
     top: 40px;
     height: calc(100% - 40px);
+    padding-right: 12px;
     overflow: scroll;
+    cursor: scrollall;
   }
+
+  &#category-descriptions {
+    @include centerer ( 400px, 700px );
+    .category {
+      clear: left;
+      padding: 8px 0;
+      .title {
+      }
+      .description {
+        padding-left: 20px;
+      }
+      .category {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &#highlights {
+    @include centerer ( 400px, 700px );
+    .highlight {
+      @include outer-container;
+      margin-bottom: 10px;
+      .term {
+        @include span-columns(10);
+      }
+      .color {
+        @include span-columns(2);
+        text-align:right;
+      }
+    }
+  }
+
 }
 
-#category-descriptions {
-  @include centerer ( 500px, 700px );
-  .category {
-    clear: left;
-    padding: 8px 0;
-    .title {
-    }
-    .description {
-      padding-left: 20px;
-    }
-    .category {
-      padding-left: 20px;
-    }
-  }
-}
+
 
 
 
