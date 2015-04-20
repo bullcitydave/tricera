@@ -29,11 +29,11 @@ $lightblue: tint( $base-color, 50% );
 
 
 @mixin standard-border {
-  border: solid 1px #111;
+  border: solid 1px #999;
 }
 
 @mixin thick-border {
-  border: solid 3px #111;
+  border: solid 1px #999;
 }
 
 @mixin vertical-text {
@@ -57,14 +57,15 @@ $lightblue: tint( $base-color, 50% );
 }
 
 @mixin checked-off {
-  background: url(../../app/images/check.svg);
+  background: url(../images/check.svg);
   background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 @mixin checked-category-row {
-  background-color: $lightblue;
+  // background-color: $lightblue;
+  font-weight: bold;
 }
 
 @mixin nav-button($direction) {
@@ -150,11 +151,11 @@ section.main-wrapper {
       button {
         cursor: pointer;
         &.prev {
-          background: url(../../app/images/chevron-left.svg);
+          background: url(../images/chevron-left.svg);
           @include nav-button(0%);
         }
         &.next {
-          background: url(../../app/images/chevron-right.svg);
+          background: url(../images/chevron-right.svg);
           @include nav-button(100%);
         }
       }
@@ -180,6 +181,8 @@ section.main-wrapper {
   }
 
   article {
+    padding: 5px 25px;
+    @include thick-border;
     @include span-columns(8);
     h1 {
       font-size: 1.0em;
@@ -187,14 +190,18 @@ section.main-wrapper {
       letter-spacing: 0.02em;
       padding: 10px 10px 10px 0;
       line-height: 1.2em;
+      font-family: Vollkorn;
+      font-size: 1.5em
     }
     h2 {
       @include small-bold;
     }
     p {
       clear: left;
-      line-height: 1.1em;
+      line-height: 1.5em;
       padding: 0 0 15px 0;
+      font-family: Vollkorn;
+      font-size: 1.2em;
     }
     .citation p {
         padding: 0;
@@ -204,6 +211,7 @@ section.main-wrapper {
     @include span-columns(4);
     @include thick-border;
     @include pad;
+    background: #eaeaea;
     section.category-table {
       @include span-columns(4 of 4);
       header {
@@ -228,6 +236,7 @@ section.main-wrapper {
       div.category-row {
         @include span-columns(4 of 4);
         @include omega;
+        border: 1px dashed;
         padding: 0 0.3em;
         &:last-of-type {
           margin-bottom: 15px;
@@ -280,6 +289,8 @@ section.main-wrapper {
         @include standard-border;
         min-height: 70px;
         resize: vertical;
+        background: #fafafa;
+        padding: 5px;
       }
     }
   }
