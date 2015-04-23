@@ -12,6 +12,7 @@ $red: red;
 $base-color: #2179b7;
 $lightblue: tint( $base-color, 50% );
 
+$page-width: 970px;
 
 @mixin category-checkbox {
     @include size(15px 15px);
@@ -95,20 +96,35 @@ $lightblue: tint( $base-color, 50% );
 
 
 
-header.main {
+header {
   @include outer-container;
   @include standard-border;
+  position: fixed;
+  z-index: 1000;
+  max-width: $page-width;
+  width: $page-width;
+  top: 0;
+  left: 50%;
+  margin-left: -$page-width/2;
+  div#header {
+    .logo-icf {
+      padding-right: 10px;
+    }
+  }
 }
 
 section.main-wrapper {
   @include outer-container;
-  max-width: 970px;
+  max-width: $page-width;
+  margin-top: 100px;
   a {
     @include dragon-hyperlink;
   }
   nav.task-nav {
     @include span-columns(12);
     @include thick-border;
+    width: $page-width;
+    position: fixed;
     &.subpage {
       border-bottom: none;
     }
@@ -180,7 +196,18 @@ section.main-wrapper {
     }
   }
 
+section.article {
+
+    position: fixed;
+    top: 150px;
+    width: $page-width;
+
+
   article {
+
+
+    max-height: 500px;
+overflow: scroll;
     padding: 5px 25px;
     @include thick-border;
     @include span-columns(8);
@@ -294,6 +321,7 @@ section.main-wrapper {
       }
     }
   }
+}
 }
 
 

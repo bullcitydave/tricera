@@ -340,12 +340,17 @@
         $('section.article').show();
       })
 
-
       $('a[class=close]').on('click', function (e) {
         $(e.target).closest('.modal').removeClass('active');
         setTimeout(function() {
           $(e.target).closest('.modal').hide();
         }, 200);
+      })
+
+      $('document').ready(function (e) {
+        console.log('setting height');
+        var h = $('aside').outerHeight();
+        $('article').css('max-height', h);
       })
     </script>
 </body>
