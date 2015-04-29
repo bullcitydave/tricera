@@ -10,7 +10,7 @@ $med-gray: #c1c1c1;
 $green: green;
 $red: red;
 $base-color: #2179b7;
-$lightblue: tint( $base-color, 50% );
+$lightblue: lighten( $base-color, 50% );
 
 $page-width: 970px;
 
@@ -65,7 +65,7 @@ $page-width: 970px;
 }
 
 @mixin checked-category-row {
-  // background-color: $lightblue;
+  background-color: $lightblue;
   font-weight: bold;
 }
 
@@ -183,7 +183,7 @@ section.main-wrapper {
   section.subpage {
     display: none;
     height: calc(100% - 150px);
-    padding: 15px 15px 15px 15px;
+    padding: 50px 15px 15px 15px;
     @include thick-border;
     border-top: none;
     h2 {
@@ -228,8 +228,8 @@ section.article {
       clear: left;
       line-height: 1.5em;
       padding: 0 0 15px 0;
-      font-family: Vollkorn;
-      font-size: 1.2em;
+      font-family: Varela Round;
+      font-size: 1.1em;
     }
     .citation p {
         padding: 0;
@@ -266,13 +266,22 @@ section.article {
       div.category-row {
         @include span-columns(4 of 4);
         @include omega;
-        border: 1px dashed;
-        padding: 0 0.3em;
+        border: 1px solid;
+        padding: 5px 10px;
+        font-size: 1.1em;
+        background-color: #fff;
         &:last-of-type {
           margin-bottom: 15px;
         }
         &.selected {
           @include checked-category-row;
+        }
+        &.parent{
+          margin-top: 20px;
+          &:first-of-type {
+            margin-top: 0;
+            border-bottom: none;
+          }
         }
         span.category, label.category {
           @include span-columns (2.7 of 4);
@@ -375,7 +384,7 @@ h2+a {
   &#citation {
     @include centerer ( 300px, 700px );
     p:first-of-type {
-      padding-top: 40;
+      padding-top: 40px;
     }
   }
 
