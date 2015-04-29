@@ -94,21 +94,23 @@ $page-width: 970px;
 @import 'core';
 
 
-
-
-header {
-  @include outer-container;
-  @include standard-border;
-  position: fixed;
-  z-index: 1000;
-  max-width: $page-width;
-  width: $page-width;
-  top: 0;
-  left: 50%;
-  margin-left: -$page-width/2;
-  div#header {
-    .logo-icf {
-      padding-right: 10px;
+body {
+  height: 100vh;
+  overflow: hidden;
+  > header {
+    @include outer-container;
+    @include standard-border;
+    position: fixed;
+    z-index: 1000;
+    max-width: $page-width;
+    width: $page-width;
+    top: 0;
+    left: 50%;
+    margin-left: -$page-width/2;
+    div#header {
+      .logo-icf {
+        padding-right: 10px;
+      }
     }
   }
 }
@@ -201,13 +203,12 @@ section.article {
     position: fixed;
     top: 150px;
     width: $page-width;
+    height: calc(100% - 20px);
 
 
   article {
-
-
-    max-height: 500px;
-overflow: scroll;
+    height: calc(100% - 150px);
+    overflow: scroll;
     padding: 5px 25px;
     @include thick-border;
     @include span-columns(8);
@@ -239,6 +240,8 @@ overflow: scroll;
     @include thick-border;
     @include pad;
     background: #eaeaea;
+    height: calc(100% - 150px);
+    overflow: scroll;
     section.category-table {
       @include span-columns(4 of 4);
       header {
@@ -367,6 +370,13 @@ h2+a {
     padding-right: 12px;
     overflow: scroll;
     cursor: scrollall;
+  }
+
+  &#citation {
+    @include centerer ( 300px, 700px );
+    p:first-of-type {
+      padding-top: 40;
+    }
   }
 
   &#category-descriptions {
